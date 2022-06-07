@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+  <title>Flappy 2048</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game_board">
+    <div class="tile" id="0|0"></div>
+    <div class="tile" id="0|1"></div>
+    <div class="tile" id="0|2"></div>
+    <div class="tile" id="0|3"></div>
+
+    <div class="tile" id="1|0"></div>
+    <div class="tile" id="1|1"></div>
+    <div class="tile" id="1|2"></div>
+    <div class="tile" id="1|3"></div>
+
+    <div class="tile" id="2|0"></div>
+    <div class="tile" id="2|1"></div>
+    <div class="tile" id="2|2"></div>
+    <div class="tile" id="2|3"></div>
+
+    <div class="tile" id="3|0"></div>
+    <div class="tile" id="3|1"></div>
+    <div class="tile" id="3|2"></div>
+    <div class="tile" id="3|3"></div>
+  </div>
+
+  <div id="player" class="number" style="--x: 0; --y: 1;">2</div>
+
+  <div id="barrier-1" class="number barrier" style="--x: 3; --y: 0; --mask1: 0; --mask2: 0"></div>
+  <div id="barrier-2" class="number barrier" style="--x: 3; --y: 3; --mask1: 0; --mask2: 0"></div>
+
+  <script type="text/javascript">
+    var y = 0;
+    var presition = 0.02;
+    var upArrow = false;
+    var downArrow = false;
+    var player = document.getElementById("player");
+    var b1 = document.getElementById("barrier-1");
+    var b2 = document.getElementById("barrier-2");
+
+    var player_score = 2;
+
+    var barrierX = 4;
+    var b1_x = 0;
+    var b2_x = 3;
+
+    var speed = 0;
+
+    setInterval(function() {
+      if (player_score < 2048) {
+        MovePlayer();
+        MoveBarrier();
+        CheckCollision();
+      }
+    }, 10)
+
+    function MovePlayer() {
+
+      speed += 0.00015 / (speed + 0.1);
+      y += speed;
+
+      if (y > 4.1)
+        player_score / 2;
+
+      player.style.setProperty("--y", y);
+    }
+    function MoveBarrier() {
+      barrierX -= presition / 0.9;
+
+      b1.style.setProperty("--mask2", "0deg");
+      b2.style.setProperty("--mask2", "0deg");
+
+      if (barrierX < 0) {
+        b1.style.setProperty("--mask1", Math.abs(barrierX));
+        b2.style.setProperty("--mask1", Math.abs(barrierX));
+      } else if (barrierX > 3) {
+        b1.style.setProperty("--mask1", Math.abs(barrierX) - 3);
+        b2.style.setProperty("--mask1", Math.abs(barrierX) - 3);
+
+        b1.style.setProperty("--mask2", "180deg");
+        b2.style.setProperty("--mask2", "180deg");
+      }
+
+      if (barrierX <= -1) {
+        var config = Math.floor(Math.random() * 3);
+        barrierX = 4;
+        if (config == 0) {
+          b1.style.setProperty("--y", "0");
+          b2.style.setProperty("--y", "3");
+          b1_x = 0;
+          b2_x = 3;
+        } else if (config == 1) {
+          b1.style.setProperty("--y", "2");
+          b2.style.setProperty("--y", "3");
+          b1_x = 2;
+          b2_x = 3;
+        } else if (config == 2) {
+          b1.style.setProperty("--y", "0");
+          b2.style.setProperty("--y", "1");
+          b1_x = 0;
+          b2_x = 1;
+        }
+
+        if (collided)
+          collided = false;
+        else {
+          player_score *= 2;
+        }
+      }
+
+      player.innerText = player_score;
+      b1.style.setProperty("--x", barrierX.toString());
+      b2.style.setProperty("--x", barrierX.toString());
+
+      player.classList = "number";
+      player.classList.add("tile-" + player_score);
+    }
+    var collided = false;
+    function CheckCollision() {
+      var distance1 = GetDistance(0, y, barrierX, b1_x);
+      var distance2 = GetDistance(0, y, barrierX, b2_x);
+      if ((distance1 < 1 || distance2 < 1) && !collided) {
+        collided = true;
+        player_score /= 2;
+      }
+    }
+
+    function GetDistance(x1, y1, x2, y2) {
+      return Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.code == "ArrowUp")
+        upArrow = true;
+      else if (event.code == "ArrowDown")
+        downArrow = true;
+      else if (event.code == "Space") {
+        speed = -0.075;
+      }
+    });
+
+    document.addEventListener("keyup", function(event) {
+      if (event.code == "ArrowUp")
+        upArrow = false;
+      else if (event.code == "ArrowDown")
+        downArrow = false;
+    });
+  </script>
+</body>
