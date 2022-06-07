@@ -96,12 +96,6 @@
                 Flappy bird
               </p>
             </div>
-            <div id="snake" class="game_holder">
-              <img src="https://logodix.com/logo/833674.png">
-              <p>
-                Snake
-              </p>
-            </div>
             <div id="pacman" class="game_holder">
               <img src="https://freepngimg.com/thumb/ghost/80736-world-pacman-square-area-png-image-high-quality.png">
               <p>
@@ -269,6 +263,7 @@ Taylor bit Antoine once apparently, saying he was a dog as well. Antoine kicked 
          var name
          var game_url
          var city_builder = document.getElementById('City_Builder');
+	 var flappy2048 = document.getElementById('Flappy2048');
          var ff = document.getElementById('FF');
          var fs = document.getElementById('FS');
          var hextris = document.getElementById('hextris');
@@ -276,7 +271,6 @@ Taylor bit Antoine once apparently, saying he was a dog as well. Antoine kicked 
          var tetris = document.getElementById('tetris');
          var dino = document.getElementById('dino');
          var flappy = document.getElementById('flappy');
-         var snake = document.getElementById('snake');
          var pacman = document.getElementById('pacman');
          var racer = document.getElementById('racer');
          var clicker = document.getElementById('clicker');
@@ -297,6 +291,17 @@ Taylor bit Antoine once apparently, saying he was a dog as well. Antoine kicked 
 				 var freak_page = document.getElementById('freak_page'); 
 				 var freak_select = document.getElementById('freak_select');
          
+	 flappy2048.style.cursor = 'pointer';
+         flappy2048.onclick = function() {
+           play.style.display = 'inline';
+           main.style.display = 'none';
+           banner = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRpwC5i5fkvayXiEvJsXpOJmJWjvtE02s7Ag&usqp=CAU"
+           cover = "https://gregorywells2007.github.io/image_library/CityBuilder.png"
+           description = "I found a game like this on a website so I just made my own close because im bored i mean its only the second day of summer what am I exposed to do I have made 2 games already how many are we going to have by the end of the summer"
+           name = "Flappy 2048"
+           game_url = "Projects/Flappy2048/index.html"
+           set_properties(banner, cover, description, name)
+         };
 	 suduko.style.cursor = 'pointer';
          suduko.onclick = function() {
            play.style.display = 'inline';
@@ -307,8 +312,7 @@ Taylor bit Antoine once apparently, saying he was a dog as well. Antoine kicked 
            name = "Sudoku!"
            game_url = "Projects/Suduko/index.html"
            set_properties(banner, cover, description, name)
-         };
-	       
+         };    
          fs.style.cursor = 'pointer';
          fs.onclick = function() {
            play.style.display = 'inline';
@@ -398,17 +402,6 @@ Taylor bit Antoine once apparently, saying he was a dog as well. Antoine kicked 
            description = "Your a bird and you have to go in between two poles so that you don't hit them!"
            name = "Flappy Bird!"
            game_url = "Projects/FlappyBird/index.html"
-           set_properties(banner, cover, description, name)
-         };
-         snake.style.cursor = 'pointer';
-         snake.onclick = function() {
-           play.style.display = 'inline';
-           main.style.display = 'none';
-           banner = "https://gregorywells2007.github.io/image_library/snake%20game.jpeg"
-           cover = "https://logodix.com/logo/833674.png"
-           description = "The game popularized by Nokia you have to go around and eat/collect apples which makes your snake longer but you have to be carefull to not hit your tail"
-           name = "Snake"
-           game_url = "Projects/Snake/index.html"
            set_properties(banner, cover, description, name)
          };
          pacman.style.cursor = 'pointer';
