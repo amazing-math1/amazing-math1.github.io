@@ -270,6 +270,7 @@ Taylor bit Antoine once apparently, saying he was a dog as well. Antoine kicked 
          var game_url
          var city_builder = document.getElementById('City_Builder');
 	 var flappy2048 = document.getElementById('Flappy2048');
+	 var BlockGame = document.getElementById('BlockGame');
          var ff = document.getElementById('FF');
          var fs = document.getElementById('FS');
          var hextris = document.getElementById('hextris');
@@ -305,6 +306,17 @@ Taylor bit Antoine once apparently, saying he was a dog as well. Antoine kicked 
            cover = "https://gregorywells2007.github.io/image_library/Flappy2048.png"
            description = "I found a game like this on a website so I just made my own clone because im bored i mean its only the second day of summer what am I exposed to do I have made 2 games already how many are we going to have by the end of the summer"
            name = "Flappy 2048"
+           game_url = "Projects/Flappy2048/index.html"
+           set_properties(banner, cover, description, name)
+         };
+	 BlockGame.style.cursor = 'pointer';
+         BlockGame.onclick = function() {
+           play.style.display = 'inline';
+           main.style.display = 'none';
+           banner = "https://gregorywells2007.github.io/image_library/BlockGame.png"
+           cover = "https://gregorywells2007.github.io/image_library/BlockGame.png"
+           description = "I make this because I was bored like half of the games on this site. Click on a block for them all to dissapear and all rows and columns will move down and over";
+           name = "Block Merge"
            game_url = "Projects/Flappy2048/index.html"
            set_properties(banner, cover, description, name)
          };
