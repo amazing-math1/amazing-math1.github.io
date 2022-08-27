@@ -4,7 +4,8 @@ This is a gaming website. Use this in schools because thats what makes you cool.
 Main Devs: Keljrack, Fightingox1<br />
 Backend Devs: Fightingox1 <br />
 Game Devs: Log-Log-Log, Keljrack, Fightingox1<br />
-Head Of Advertising: Level121
+Head Of Advertising: Level121 <br />
+Hardware engineer: T306
 
 Current Projects <br />
 Outbreak - Zombie survival game <br />
