@@ -11,7 +11,7 @@ Current Projects <br />
 Outbreak - Zombie survival game <br />
 Civilization Game - Try and take over the world <br />
 2d Racing Game - Get the fastest time <br />
-Astral Engine - Game engine
+Gregine - Game engine
 
 ## By Astral
 
