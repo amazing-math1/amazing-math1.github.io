@@ -15,7 +15,7 @@ Astral Engine - Game engine
 
 ## By Astral
 
-[Website](https://astraltech.github.io/Amazing-Math.github.io/)
+[Website](https://astraltech.github.io/AmazingMath/)
 
 ```diff
 - We are currently working on removing stolen games
