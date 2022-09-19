@@ -15,6 +15,7 @@ setInterval(function() {
 CreateBoard();
 
 function CreateBoard() {
+  finalScreen.classList.add("Hide");
   var board_Index = 0;
 
   for (var x = 0; x < 10; x++) {
@@ -146,7 +147,11 @@ function FindTilesLeft() {
     }
   }
   finalScreen.classList.add("Show");
+  finalScreen.classList.remove("Hide");
+
   points_display.classList.add("Hide");
+  points_display.classList.remove("Show");
+  
   final_score.innerText = points;
   if (points > highScore) {
     highScore = points;
