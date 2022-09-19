@@ -8,17 +8,27 @@
 
   </div>
 
-  <div id="points_display">
-    - Points -
-    <div id="points_count">69</div>
-    <div id="ResetButton" class="Button" onclick="ResetGame()">Reset</div>
+  <div id="top_displays">
+    <div id="points_display">
+      - Points -
+      <div id="points_count">69</div>
+      <div id="ResetButton" class="Button" onclick="ResetGame()">Reset</div>
+    </div>
+
+    <div id="game_mode_display">
+
+      <select name="gamemode" id="gamemode">
+        <option value="volvo">Default</option>
+      </select>
+
+    </div>
   </div>
 
-  <div id="AIMessage">
-
+  <div id="game_mode">
+    <drop type=>
   </div>
 
-  <div id="FinalScreen">
+  <div id="FinalScreen" class="Hide">
     <div class="label">----- Final Score -----</div>
     <div id="final_score">69</div>
     <div class="label">----- High Score -----</div>
