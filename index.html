@@ -24,6 +24,12 @@
 	   <img id="outbreak_banner" src="img/Ad_banner.jpg">
          </div>
            <div class="game_icons">
+             <div id="minecraft" class="game_holder">
+               <img src="img/minecraft_cover.jepg">
+               <p>
+                 <a style="color: #EAFF33; font-weight: bold;">NEW: </a> Minecraft
+               </p>
+            </div>
              <div id="Slope" class="game_holder">
                <img src="img/slope_cover.jpg">
                <p>
@@ -289,6 +295,7 @@ ryan has a pokemon fettish and beats off to pokemon
          var description
          var name
          var game_url
+	 var minecraft = document.getElementById('minecraft')
 	 var slope = document.getElementById('Slope')
          var city_builder = document.getElementById('City_Builder');
 	 var flappy2048 = document.getElementById('Flappy2048');
@@ -320,6 +327,18 @@ ryan has a pokemon fettish and beats off to pokemon
 				 var freak_page = document.getElementById('freak_page'); 
 				 var freak_select = document.getElementById('freak_select');
          
+	 minecraft.style.cursor = 'pointer';
+         minecraft.onclick = function() {
+           play.style.display = 'inline';
+           main.style.display = 'none';
+           banner = "img/minecraft_banner.jpeg"
+           cover = "img/minecraft_cover.jpeg"
+           description = "xlegends got blocked so heres minecraft, an actually fun game u can play on amazing math!"
+           name = "minecraft"
+           game_url = "Projects/minecraft/index.html"
+           set_properties(banner, cover, description, name)
+         };
+	       
 	 slope.style.cursor = 'pointer';
          slope.onclick = function() {
            play.style.display = 'inline';
