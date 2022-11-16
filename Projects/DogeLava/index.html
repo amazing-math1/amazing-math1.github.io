@@ -228,7 +228,7 @@ function game(){
         );
         if(difficulty<15){difficulty++}
     }
-    score = difficulty*1000 + Math.round(canvas.height-py);
+    score = difficulty*1000 + Math.round((canvas.height-py)* (1000 / canvas.height));
     score_count.innerHTML = "Score: " + score;
     if(canvas.height-(py+ph/2)<lavaHeight){
         document.getElementById("endscreen").hidden = false;
