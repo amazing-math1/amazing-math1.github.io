@@ -18,8 +18,10 @@ button{
     width: 200px;height: 150px;
 }
 #endscreen{
-    position: absolute;
-    left: 45%;top: 35%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     text-align: center;
     border-radius: 80px;
     background-color: rgba(30,30,30,75%);
@@ -27,8 +29,10 @@ button{
     line-height: 15px;
 }
 #startscreen{
-    position: absolute;
-    left: 20%;top: 10%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     text-align: center;
 }
 #controls{
@@ -40,7 +44,6 @@ button{
   position: fixed;
   color: gray;
   font-size: 25px;
-  
 }
         
 .PushRight {
@@ -277,3 +280,4 @@ document.addEventListener("keyup", function(e){
     </script>
 </body>
 </html>
+Footer
