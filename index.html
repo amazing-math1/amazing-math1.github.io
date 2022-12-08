@@ -21,7 +21,7 @@
          <div id="name_welcome" class="name_welcome">
            <h1>Hello, User</h1>
            <p>Welcome to Amazing Math</p>
-	   <img id="outbreak_banner" src="img/subscribe_to_ramon.png">
+	   <img id="outbreak_banner" src="img/subscribe_to_ramon.png" onclick="set_page('https://thegamingsqueaker.github.io/zabala/')">
          </div>
            <div class="game_icons">
              <div id="minecraft" class="game_holder">
@@ -611,6 +611,10 @@ ryan 2 has a pokemon fettish and beats off to pokemon
            document.getElementById("game_name").innerHTML = game_name
          }
 
+	 function set_page(page) {
+	   window.location.href = page;	 
+	 }
+	       
        </script>
      </body>
 
